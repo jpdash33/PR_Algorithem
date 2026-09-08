@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='image/favicon.png') }}">
+
+    <title>PR About</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('contact') }}">Contact Us</a>
+        </div>
+    </nav><br>
+
+
+    <div id="main">
+
+        <h2>What is PageRank?</h2>
+
+        <p>
+            PageRank is an algorithm used to estimate the importance of a web page. It looks at the links between
+            differentpages. A page can receive importance from other pages that link to it.
+            The basic idea is that a page linked by many useful and important pages may also be considered important.
+        </p>
+
+
+        <h2>Web Pages as a Graph:</h2>
+
+        <p>
+            To understand PageRank, we can think of the web as a graph. <br>
+            In a graph: <br>
+            Node → represents a web page. <br>
+            Edge → represents a link between two web pages. <br>
+            Direction → shows which page is linking to which page. <br><br>
+            For example, if Page A links to Page B: <br>
+            <strong>A → B </strong><br>
+            Here, A and B are nodes, and the arrow from A to B is an edge.
+        </p>
+
+
+        <h2>Links Can Be Like Votes: </h2>
+
+        <p>
+            If Page A links to Page B, Page A is giving some importance to Page B. <br>
+            A link can be thought of as a vote or recommendation. <br>
+            For example: <br>
+            A ──> C <br>
+            B ──> C <br>
+            D ──> C <br><br>
+            Here, three pages are linking to C. This can be a sign that C is important.
+            However, PageRank does not simply count the number of links. <br>
+        </p>
+
+
+        <h2>Not All Votes Have the Same Value: </h2>
+
+        <p>
+            A link from an important page can be more valuable than a link from a less important page. <br>
+            For example: <br>
+            Important Page ──> C <br>
+            Less Important Page ──> C <br><br>
+            The link from the important page may contribute more PageRank to C.
+            This is one of the main ideas behind PageRank. <br>
+        </p>
+
+
+        <h2>Number of Outgoing Links Matters: </h2>
+
+        <p>
+            Suppose Page A links to two pages:- <br>
+
+            ┌──> B <br>
+            A ───┤ <br>
+            └──> C <br><br>
+
+            A's PageRank is divided between B and C.
+            If A links to many pages, its PageRank is distributed among more pages.
+            This is why PageRank considers not only who links to a page, but also how many outgoing links the linking
+            page has. <br>
+        </p>
+
+
+        <h2>PageRank Uses Repeated Calculations: </h2>
+
+        <p>
+            PageRank is not normally calculated just once. <br>
+            The algorithm starts with initial values and repeatedly updates them. <br>
+            The general process is: <br>
+        </p>
+
+        <ul>
+            <li>Give every page an initial PageRank.</li>
+            <li>Look at the links between pages.</li>
+            <li>Pass PageRank through those links.</li>
+            <li>Calculate new PageRank values.</li>
+            <li>Repeat the process.</li>
+            <li>Continue until the values become stable.</li>
+        </ul>
+
+        <p>
+            This repeated process allows the importance of one page to affect the importance of other pages.
+        </p>
+
+
+        <h2>Damping Factor: </h2>
+
+        <p>
+            PageRank also uses a concept called the damping factor. <br>
+            The damping factor represents the idea that a person browsing the web may sometimes follow a link and
+            sometimes jump to another page directly. <br>
+            Damping Factor denoted as 'd' and value of d is: <br>
+            d = 0.85
+        </p>
+
+
+        <h2>PageRank Formula: </h2>
+
+        <p>
+            The basic PageRank formula can be written as: <br>
+            ----------------------------------------------------------- <br>
+            PR(A) = (1 - d) / N + d × Σ(PR(B) / L(B)) <br>
+            ----------------------------------------------------------- <br><br>
+            Where:
+        </p>
+
+        <ul>
+            <li>PR(A) → PageRank of page A</li>
+            <li>d → damping factor</li>
+            <li>N → total number of pages</li>
+            <li>PR(B) → PageRank of a page linking to A</li>
+            <li>L(B) → number of outgoing links from page B</li>
+        </ul>
+
+    </div>
+
+    <div id="examplepic">
+        <img src="{{ url_for('static',  filename='image/example.webp') }}" alt="example">
+    </div>
+
+    <script src="{{ url_for('static', filename = 'function.js') }}"></script>
+
+</body>
+
+</html>

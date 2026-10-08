@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="icon" type="image/png" href="./image/favicon.png">
+
+    <title>PageRank Algorithm</title>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav>
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-diagram-project"></i>
+            </div>
+
+            <div class="brand-name">
+                <strong>PageRank</strong>
+                <span>Algorithm</span>
+            </div>
+        </div>
+
+
+        <div class="nav-links">
+            <a href="Home.html" class="active">Home</a>
+            <a href="concept.html">Concept</a>
+            <a href="lab.html">Lab</a>
+            <a href="dataset.html">Download</a>
+            <a href="about.html">About</a>
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO / BANNER
+    ========================== -->
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-tag"> <span></span> LINK ANALYSIS ALGORITHM </div>
+
+                <h1> PageRank <br> <span>Algorithm</span> </h1>
+
+                <p class="hero-definition">
+                    A link-analysis algorithm that measures the
+                    <strong>relative importance of nodes</strong>
+                    in a directed network.
+                </p>
+
+                <p class="hero-description">
+                    PageRank gives higher importance to nodes that
+                    receive links from other important nodes.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="concept.html" class="primary-btn">
+                        Explore Concepts
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="lab.html" class="secondary-btn">
+                        View Lab
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 NETWORK VISUAL
+            ========================== -->
+
+            <div class="network-container">
+
+                <div class="network-title">
+                    <span>NETWORK MODEL</span>
+
+                    <div class="live"> <i></i> STATIC GRAPH </div>
+                </div>
+
+                <div class="network">
+                    <div class="connection c1"></div>
+                    <div class="connection c2"></div>
+                    <div class="connection c3"></div>
+                    <div class="connection c4"></div>
+                    <div class="connection c5"></div>
+
+                    <!-- nodes -->
+
+                    <div class="network-node node-a">
+                        <strong>A</strong>
+                        <small>0.34</small>
+                    </div>
+
+                    <div class="network-node node-b">
+                        <strong>B</strong>
+                        <small>0.21</small>
+                    </div>
+
+                    <div class="network-node node-c">
+                        <strong>C</strong>
+                        <small>0.28</small>
+                    </div>
+
+                    <div class="network-node node-d">
+                        <strong>D</strong>
+                        <small>0.17</small>
+                    </div>
+
+                </div>
+
+
+                <div class="network-info">
+
+                    <div>
+                        <span>NODES</span>
+                        <strong>04</strong>
+                    </div>
+
+                    <div>
+                        <span>EDGES</span>
+                        <strong>05</strong>
+                    </div>
+
+                    <div>
+                        <span>RANKING</span>
+                        <strong>PR</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             QUICK DATA
+        ========================== -->
+
+        <section class="quick-data">
+            <div class="section-heading">
+                <span>PAGE RANK AT A GLANCE</span>
+                <h2>Some Basic Facts</h2>
+            </div>
+
+            <div class="data-grid">
+
+                <!-- CARD 1 -->
+                <div class="data-card purple">
+                    <div class="data-icon">
+                        <i class="fa-regular fa-calendar"></i>
+                    </div>
+
+                    <div class="data-text">
+                        <span>DEVELOPED</span>
+                        <h3>1996</h3>
+                        <p>Stanford University</p>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="data-card cyan">
+                    <div class="data-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div class="data-text">
+                        <span>DEVELOPERS</span>
+                        <h3>Page & Brin</h3>
+                        <p>Larry Page & Sergey Brin</p>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="data-card green">
+                    <div class="data-icon">
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+
+                    <div class="data-text">
+                        <span>COMMON VALUE</span>
+                        <h3>0.85</h3>
+                        <p>Damping factor</p>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="data-card orange">
+                    <div class="data-icon">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+
+                    <div class="data-text">
+                        <span>NETWORK</span>
+                        <h3>Directed</h3>
+                        <p>Graph structure</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- =========================
+             CORE IDEA
+        ========================== -->
+
+        <section class="core-section">
+
+            <div class="core-label">
+                <span></span>
+                CORE IDEA
+            </div>
+
+
+            <h2>
+                A page is important when
+                <span>important pages</span>
+                link to it.
+            </h2>
+
+
+            <p>
+                PageRank does not simply count the number of links.
+                It also considers the importance of the pages providing
+                those links.
+            </p>
+
+
+            <div class="flow">
+
+                <div class="flow-item">
+                    <strong>01</strong>
+                    <span>Nodes</span>
+                </div>
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+                <div class="flow-item">
+                    <strong>02</strong>
+                    <span>Links</span>
+                </div>
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+                <div class="flow-item">
+                    <strong>03</strong>
+                    <span>Rank Distribution</span>
+                </div>
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+                <div class="flow-item">
+                    <strong>04</strong>
+                    <span>Final Rank</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+
+</body>
+</html>

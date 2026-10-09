@@ -5,15 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/concept.css">
     <link rel="icon" type="image/png" href="./image/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <title>Concepts</title>
+    <title>PageRank | Concepts & Theory</title>
 </head>
 
-<body>
+<body class="concept-page">
 
+    <!-- ================= NAVBAR ================= -->
     <nav>
-
         <div class="brand">
             <div class="brand-icon">
                 <i class="fa-solid fa-diagram-project"></i>
@@ -33,15 +35,627 @@
             <a href="dataset.html">Download</a>
             <a href="about.html">About</a>
         </div>
-
     </nav>
 
 
+    <!-- ================= PAGE LAYOUT ================= -->
+
+    <div class="concept-layout">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="concept-sidebar">
+
+            <div class="sidebar-heading">
+                <span class="sidebar-kicker">LEARN PAGERANK</span>
+                <h3>Documentation</h3>
+                <p>Understand the algorithm step by step.</p>
+            </div>
+
+            <div class="sidebar-group">
+                <span class="sidebar-label">FUNDAMENTALS</span>
+
+                <a href="#intro" class="sidebar-link active">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Introduction</span>
+                    <i class="fa-solid fa-chevron-right link-arrow"></i>
+                </a>
+
+                <a href="#terms" class="sidebar-link">
+                    <i class="fa-solid fa-cubes"></i>
+                    <span>Basic Terms</span>
+                    <i class="fa-solid fa-chevron-right link-arrow"></i>
+                </a>
+
+                <a href="#g_theory" class="sidebar-link">
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <span>Graph Theory</span>
+                    <i class="fa-solid fa-chevron-right link-arrow"></i>
+                </a>
+            </div>
+
+            <div class="sidebar-group">
+                <span class="sidebar-label">ALGORITHM</span>
+
+                <a href="#PR" class="sidebar-link">
+                    <i class="fa-solid fa-calculator"></i>
+                    <span>PageRank Algorithm</span>
+                    <i class="fa-solid fa-chevron-right link-arrow"></i>
+                </a>
+
+                <a href="#practical" class="sidebar-link">
+                    <i class="fa-solid fa-flask"></i>
+                    <span>Practical Experiment</span>
+                    <i class="fa-solid fa-chevron-right link-arrow"></i>
+                </a>
+            </div>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-bottom-icon">
+                    <i class="fa-solid fa-lightbulb"></i>
+                </div>
+
+                <p><strong>Learning tip</strong></p>
+                <span>Understand the graph first, then explore the formula.</span>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="concept-main">
+
+            <!-- PAGE HERO -->
+            <header class="concept-hero reveal">
+
+                <div class="hero-orb hero-orb-one"></div>
+                <div class="hero-orb hero-orb-two"></div>
+
+                <div class="concept-hero-content">
+
+                    <div class="concept-breadcrumb">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Documentation</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <span class="breadcrumb-current">Concepts</span>
+                    </div>
+
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        THE PAGERANK LEARNING GUIDE
+                    </div>
+
+                    <h1> Understand the <span>PageRank Algorithm.</span> </h1>
+
+                    <p> From the fundamentals of graph theory to the mathematics behind ranking algorithms, learn how
+                        PageRank measures the importance of connected pages. </p>
+
+                    <div class="hero-actions">
+                        <a href="#intro" class="primary-action"> Start Learning <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                        <a href="#PR" class="secondary-action"> <i class="fa-solid fa-square-root-variable"></i> Explore
+                            the Formula </a>
+                    </div>
+
+                    <div class="hero-meta">
+                        <span><i class="fa-solid fa-book"></i> Conceptual Guide</span>
+                        <span><i class="fa-solid fa-code-branch"></i> Step by Step</span>
+                        <span><i class="fa-solid fa-graduation-cap"></i> Beginner Friendly</span>
+                    </div>
+
+                </div>
+
+                <div class="hero-decoration" aria-hidden="true">
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+                    <div class="orbit-node node-a">A</div>
+                    <div class="orbit-node node-b">B</div>
+                    <div class="orbit-node node-c">C</div>
+                    <div class="orbit-node node-d">D</div>
+
+                    <div class="orbit-center">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- INTRODUCTION -->
+            <section id="intro" class="concept-section reveal">
+
+                <div class="section-heading">
+                    <div class="section-icon purple-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <div>
+                        <span class="section-kicker">01 / GETTING STARTED</span>
+                        <h2>Introduction to PageRank</h2>
+                        <p>Discover where PageRank came from and why it matters.</p>
+                    </div>
+                </div>
+
+                <div class="content-panel">
+
+                    <h3>What is PageRank?</h3>
+
+                    <p>
+                        PageRank is a link-analysis algorithm that estimates the
+                        relative importance of nodes in a network. It became
+                        widely known through its use in ranking web pages.
+                    </p>
+
+                    <div class="highlight-quote">
+                        <i class="fa-solid fa-quote-left"></i>
+                        <p>
+                            A page can be important because other important pages
+                            link to it.
+                        </p>
+                    </div>
+
+                    <div class="mini-content-grid">
+
+                        <article class="mini-card">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                            <h4>History</h4>
+                            <p>PageRank was created in 1996 by Larry Page and Sergey Brin at Stanford University as the
+                                foundational technology behind the Google search engine. Originally named BackRub, the
+                                system revolutionized web search by treating hyperlinks as objective votes of
+                                confidence, drawing inspiration from academic citation analysis and contemporary
+                                hypertext experiments like Jon Kleinberg's HITS algorithm. In 1998, the founders
+                                published their seminal paper on the technology, officially launching Google Inc. later
+                                that year. To provide transparency, Google introduced a public Toolbar PageRank in 2000
+                                that scored websites on a scale from 1 to 10, which inadvertently sparked a massive wave
+                                of black-hat SEO manipulation and link-selling. To combat this spam, Google updated its
+                                infrastructure throughout the mid-2000s, transitioning to more secure, non-iterative
+                                versions before officially removing public PageRank scores in 2016. Today, while the
+                                public metric is gone, a heavily modernized and secure iteration of PageRank remains a
+                                core component of Google's ranking systems, working alongside artificial intelligence
+                                and advanced anti-spam layers to evaluate website authority. </p>
+                        </article>
+
+                        <article class="mini-card">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <h4>Definition</h4>
+                            <p>The PageRank algorithm is a link analysis mathematical formula used to measure the
+                                relative importance and authority of web pages by analyzing the quantity and quality of
+                                links pointing to them. <br><br>
+
+                                <b>The Core Concept:</b>
+                                The algorithm operates on a simple principle: a hyperlink from one website to another
+                                acts as a vote of confidence. However, PageRank does not treat all votes equally. A link
+                                from a highly authoritative, heavily linked page carries far more weight than a link
+                                from an obscure or low-quality website.
+                            </p>
+                        </article>
+
+                        <article class="mini-card">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            <h4>Applications</h4><br>
+
+                            <b>Search Engine Optimization (SEO):</b>
+                            <p>Measures website authority and helps determine
+                                organic search result rankings.</p>
+
+                            <br><b>Social Network Analysis:</b>
+                            <p>Identifies key influencers, popular accounts, and
+                                central hubs on platforms like X (Twitter) or LinkedIn.</p>
+
+                            <br><b>Recommender Systems:</b>
+                            <p>
+                                Powers "who to follow" suggestions or product recommendations by analyzing user-item
+                                relationship networks.
+                            </p>
+
+                            <br><b>Urban Planning & Logistics:</b>
+                            <p>Analyzes traffic flow and street connectivity to identify crucial intersections or
+                                bottlenecks in a city grid.</p><br><br>
+
+                            <p style="color: purple; font-size: 13px;">and etc.</p>
+                        </article>
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+                    </div>
 
+                </div>
+
+            </section>
+
+
+            <!-- BASIC TERMS -->
+
+            <section id="terms" class="concept-section reveal">
+
+                <div class="section-heading">
+                    <div class="section-icon cyan-icon">
+                        <i class="fa-solid fa-cubes"></i>
+                    </div>
+
+                    <div>
+                        <span class="section-kicker">02 / THE BUILDING BLOCKS</span>
+                        <h2>Basic Terms</h2>
+                        <p>Understand the terminology used throughout PageRank.</p>
+                    </div>
+                </div>
+
+                <div class="term-grid">
+
+                    <article class="term-card">
+                        <div class="term-card-top">
+                            <span class="term-number">01</span>
+                            <i class="fa-solid fa-circle-nodes"></i>
+                        </div>
+                        <h3>Node / Page</h3>
+                        <p>A node represents an individual item in a graph, such as a web page.</p>
+                    </article>
+
+                    <article class="term-card">
+                        <div class="term-card-top">
+                            <span class="term-number">02</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                        <h3>Directed Edge / Link</h3>
+                        <p>A directed edge indicates a connection from one node to another.</p>
+                    </article>
+
+                    <article class="term-card">
+                        <div class="term-card-top">
+                            <span class="term-number">03</span>
+                            <i class="fa-solid fa-link"></i>
+                        </div>
+                        <h3>Backlink / Inlink</h3>
+                        <p>A link coming from another page into the current page.</p>
+                    </article>
+
+                    <article class="term-card">
+                        <div class="term-card-top">
+                            <span class="term-number">04</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </div>
+                        <h3>Outlink</h3>
+                        <p>A link from the current page to another page.</p>
+                    </article>
+
+                    <article class="term-card">
+                        <div class="term-card-top">
+                            <span class="term-number">05</span>
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h3>Link Weight</h3>
+                        <p>A numerical value representing link strength in a weighted graph or algorithm variant.</p>
+                    </article>
+
+                    <article class="term-card">
+                        <div class="term-card-top">
+                            <span class="term-number">06</span>
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <h3>Damping Factor</h3>
+                        <p>The parameter <code>d = 0.85</code> that models the probability of following links in the
+                            Random
+                            Surfer Model.</p>
+                    </article>
+
+                    <article class="term-card">
+                        <div class="term-card-top">
+                            <span class="term-number">07</span>
+                            <i class="fa-solid fa-person-walking-arrow-right"></i>
+                        </div>
+                        <h3>Random Surfer Model</h3>
+                        <p>A model of a visitor who follows links or randomly jumps to a page.</p>
+                    </article>
+
+                    <article class="term-card">
+                        <div class="term-card-top">
+                            <span class="term-number">08</span>
+                            <i class="fa-solid fa-ranking-star"></i>
+                        </div>
+                        <h3>PageRank Score</h3>
+                        <p>A numerical value representing a node's relative importance in a graph.</p>
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- GRAPH THEORY -->
+
+            <section id="g_theory" class="concept-section reveal">
+
+                <div class="section-heading">
+                    <div class="section-icon green-icon">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+
+                    <div>
+                        <span class="section-kicker">03 / GRAPH FUNDAMENTALS</span>
+                        <h2>Graph Theory</h2>
+                        <p>Learn how pages and links are represented mathematically.</p>
+                    </div>
+                </div>
+
+                <div class="content-panel graph-panel">
+
+                    <div class="graph-explanation">
+                        <h3>Representing a network</h3>
+
+                        <p>
+                            A graph consists of nodes and edges. PageRank uses
+                            a directed graph to represent relationships such as
+                            hyperlinks between web pages.
+                        </p>
+
+                        <div class="graph-fact">
+                            <span class="fact-dot purple-dot"></span>
+                            <div>
+                                <strong>Nodes (V)</strong>
+                                <p>The set of pages or entities in the network.</p>
+                            </div>
+                        </div>
+
+                        <div class="graph-fact">
+                            <span class="fact-dot cyan-dot"></span>
+                            <div>
+                                <strong>Edges (E)</strong>
+                                <p>The set of directed connections between nodes.</p>
+                            </div>
+                        </div>
+
+                        <div class="graph-fact">
+                            <span class="fact-dot green-dot"></span>
+                            <div>
+                                <strong>Directed Graph</strong>
+                                <p>Each edge has a source and a destination.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="graph-visual" aria-label="Example directed graph">
+
+                        <svg viewBox="0 0 340 260" role="img" aria-label="Four nodes connected by directed arrows">
+
+                            <defs>
+                                <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                                    <path d="M0,0 L0,6 L6,3 z" fill="#8b5cf6" />
+                                </marker>
+                            </defs>
+
+                            <path d="M91 72 L235 72" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)" />
+
+                            <path d="M255 94 L255 170" stroke="#22d3ee" stroke-width="2" marker-end="url(#arrowhead)" />
+
+                            <path d="M230 195 L105 195" stroke="#34d399" stroke-width="2"
+                                marker-end="url(#arrowhead)" />
+
+                            <path d="M78 170 L78 96" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)" />
+
+                            <path d="M95 89 Q165 148 235 89" stroke="#f59e0b" stroke-width="2" fill="none"
+                                marker-end="url(#arrowhead)" />
+
+                            <circle cx="78" cy="72" r="25" fill="#21183b" stroke="#a78bfa" stroke-width="2" />
+
+                            <circle cx="255" cy="72" r="25" fill="#112d35" stroke="#22d3ee" stroke-width="2" />
+
+                            <circle cx="255" cy="195" r="25" fill="#123228" stroke="#34d399" stroke-width="2" />
+
+                            <circle cx="78" cy="195" r="25" fill="#362716" stroke="#f59e0b" stroke-width="2" />
+
+                            <g fill="#ffffff" font-size="16" font-weight="700" text-anchor="middle"
+                                dominant-baseline="middle">
+                                <text x="78" y="72">A</text>
+                                <text x="255" y="72">B</text>
+                                <text x="255" y="195">C</text>
+                                <text x="78" y="195">D</text>
+                            </g>
+
+                        </svg>
+
+                        <span class="graph-caption">
+                            Example: a directed network of four nodes
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PAGERANK ALGORITHM -->
+
+            <section id="PR" class="concept-section reveal">
+
+                <div class="section-heading">
+                    <div class="section-icon orange-icon">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+
+                    <div>
+                        <span class="section-kicker">04 / THE MATHEMATICS</span>
+                        <h2>PageRank Algorithm</h2>
+                        <p>Explore the formula and how PageRank scores are calculated.</p>
+                    </div>
+                </div>
+
+                <div class="content-panel">
+
+                    <h3>The basic idea</h3>
+
+                    <p>
+                        Each page receives contributions from pages linking to it.
+                        A source page distributes its score among its outgoing
+                        links, and the algorithm repeats this calculation.
+                    </p>
+
+                    <!-- <div class="formula-card">
+
+                        <span class="formula-label">CLASSIC PAGERANK FORMULA</span>
+
+                        <div class="formula">
+                            PR(A) = (1 - d) / N + d
+                            <span class="fraction">
+                                <span class="numerator">PR(T)</span>
+                                <span class="denominator">L(T)</span>
+                            </span>
+                        </div>
+
+                        <p class="formula-note">
+                            The complete calculation sums the incoming
+                            contributions from all pages T that link to A.
+                        </p>
+
+                    </div> -->
+
+
+                    <div class="formula-card">
+
+                        <div class="pagerank-formula">
+                            <span class="pr">PR(i)</span>
+                            <span>=</span>
+
+                            <span class="fraction">
+                                <span class="numerator">1 - d</span>
+                                <span class="denominator">N</span>
+                            </span>
+
+                            <span>+</span>
+                            <span class="damping">d</span>
+
+                            <span class="summation">
+                                <span class="sum-symbol">∑</span>
+                                <span class="sum-condition">j → i</span>
+                            </span>
+
+                            <span class="fraction contribution">
+                                <span class="numerator">PR(j)</span>
+                                <span class="denominator">L(j)</span>
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class="formula-components">
+                        <div>
+                            <code>PR(i)</code>
+                            <span>PageRank score of the page or node 'i'.</span>
+                        </div>
+
+                        <div>
+                            <code>d</code>
+                            <span>Damping factor, commonly 0.85.</span>
+                        </div>
+
+                        <div>
+                            <code>N</code>
+                            <span>Total number of pages in the graph.</span>
+                        </div>
+
+                        <div>
+                            <code>j → i</code>
+                            <span>Indicates that page 'j' links to page 'i'.</span>
+                        </div>
+
+                        <div>
+                            <code>PR(j)</code>
+                            <span>PageRank score of an incoming page 'j'.</span>
+                        </div>
+
+                        <div>
+                            <code>L(j)</code>
+                            <span>Number of outgoing links from page 'j'.</span>
+                        </div>
+
+                        <div>
+                            <code>∑</code>
+                            <span>Adds the contributions from all pages linking to page 'i'.</span>
+                        </div>
+                    </div>
+
+                    <div class="algorithm-next">
+                        <div>
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>Next, explore a worked example, iterations, and convergence.</span>
+                        </div>
+
+                        <a href="lab.html">
+                            Open Lab
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PRACTICAL EXPERIMENT -->
+
+            <section id="practical" class="concept-section reveal">
+
+                <div class="section-heading">
+                    <div class="section-icon pink-icon">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+
+                    <div>
+                        <span class="section-kicker">05 / PUT THEORY INTO PRACTICE</span>
+                        <h2>Practical Experiment</h2>
+                        <p>Move from understanding the algorithm to implementing it.</p>
+                    </div>
+                </div>
+
+                <div class="lab-callout">
+
+                    <div class="lab-callout-content">
+                        <span class="lab-eyebrow">
+                            <i class="fa-solid fa-terminal"></i>
+                            PAGERANK LAB
+                        </span>
+
+                        <h3>Ready to calculate PageRank?</h3>
+
+                        <p>
+                            Explore the Python implementation, work with graph
+                            datasets, and examine the scores produced by the
+                            algorithm.
+                        </p>
+
+                        <a href="lab.html" class="lab-action"> Explore the Lab <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="lab-visual">
+                        <div class="code-window">
+                            <div class="code-window-top">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <small>pagerank.py</small>
+                            </div>
+
+                            <pre><code><span class="code-purple">def</span> <span class="code-cyan">pagerank</span>(graph):
+ranks = initialize(graph)
+    <span class="code-purple">while</span> not converged:
+        ranks = update(ranks, graph)
+    <span class="code-purple">return</span> ranks</code></pre>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+        </main>
+
+    </div>
+
+
+
+
+
+    <script src="./JS/concept.js"></script>
 </body>
 
 </html>

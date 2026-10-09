@@ -47,7 +47,7 @@ body {
 /* =========================
    NAVBAR
 ========================= */
-nav {
+/* nav {
     height: 70px;
     padding: 0 7%;
     display: flex;
@@ -61,9 +61,6 @@ nav {
     backdrop-filter: blur(12px);
 }
 
-/* =========================
-   BRAND
-========================= */
 .brand {
     display: flex;
     align-items: center;
@@ -105,9 +102,7 @@ nav {
     margin-top: 3px;
 }
 
-/* =========================
-   NAV LINKS
-========================= */
+
 .nav-links {
     display: flex;
     align-items: center;
@@ -145,7 +140,7 @@ nav {
             var(--cyan));
     box-shadow:
         0 0 10px rgba(139, 92, 246, 0.8);
-}
+} */
 
 /* =========================================================
    HERO

@@ -1,4 +1,3 @@
-
 /* =========================================
    PAGERANK DATASET LIBRARY
 ========================================= */
@@ -101,7 +100,7 @@ body {
     color: transparent;
 }
 
-.dataset-hero > p {
+.dataset-hero>p {
     max-width: 640px;
     color: var(--ds-muted);
     font-size: 16px;
@@ -117,7 +116,7 @@ body {
     margin-top: 30px;
 }
 
-.hero-stats > div {
+.hero-stats>div {
     display: flex;
     align-items: center;
     gap: 9px;
@@ -251,11 +250,9 @@ body {
     z-index: -1;
     opacity: 0;
     border-radius: inherit;
-    background: radial-gradient(
-        circle at 50% 0%,
-        rgba(var(--accent-rgb), 0.13),
-        transparent 65%
-    );
+    background: radial-gradient(circle at 50% 0%,
+            rgba(var(--accent-rgb), 0.13),
+            transparent 65%);
     transition: opacity 0.3s ease;
     pointer-events: none;
 }
@@ -568,19 +565,6 @@ body {
 ========================================= */
 
 @media (max-width: 1000px) {
-    .dataset-navbar {
-        padding-inline: 4%;
-    }
-
-    .dataset-navbar .nav-links {
-        gap: 2px;
-    }
-
-    .dataset-navbar .nav-links a {
-        padding: 9px 10px;
-        font-size: 13px;
-    }
-
     .dataset-container {
         width: 92%;
     }
@@ -595,24 +579,6 @@ body {
 }
 
 @media (max-width: 650px) {
-    .dataset-navbar {
-        position: relative;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-        padding: 16px 5%;
-    }
-
-    .dataset-navbar .nav-links {
-        width: 100%;
-        overflow-x: auto;
-        padding-bottom: 4px;
-    }
-
-    .dataset-navbar .nav-links a {
-        flex-shrink: 0;
-    }
-
     .dataset-container {
         width: 92%;
     }
@@ -628,7 +594,7 @@ body {
         letter-spacing: -1.5px;
     }
 
-    .dataset-hero > p {
+    .dataset-hero>p {
         font-size: 14px;
     }
 
@@ -672,6 +638,7 @@ body {
 
 /* Respect reduced-motion preferences */
 @media (prefers-reduced-motion: reduce) {
+
     .dataset-card,
     .dataset-card *,
     .dataset-navbar *,

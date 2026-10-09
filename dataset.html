@@ -1,18 +1,26 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PageRank | Dataset Library</title>
+
     <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/dataset.css">
     <link rel="icon" type="image/png" href="./image/favicon.png">
 
-    <title>Download Datasets</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
 
-   <nav>
+    <!-- NAVBAR -->
+    <nav>
 
         <div class="brand">
             <div class="brand-icon">
@@ -36,11 +44,340 @@
 
     </nav>
 
-    
+
+    <!-- DATASET HERO -->
+    <main class="dataset-container">
+
+        <section class="dataset-hero">
+
+            <div class="hero-label">
+                <i class="fa-solid fa-database"></i>
+                PAGE RANK RESOURCE CENTER
+            </div>
+
+            <h1>
+                Explore the
+                <span>Dataset Library.</span>
+            </h1>
+
+            <p>
+                Discover real-world networks, download graph datasets,
+                and experiment with your own PageRank implementation.
+            </p>
+
+            <div class="hero-stats">
+                <div>
+                    <i class="fa-solid fa-diagram-project"></i>
+                    <span>Real-world graphs</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-download"></i>
+                    <span>Official data sources</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <span>Ready for experiments</span>
+                </div>
+            </div>
+
+        </section>
 
 
+        <!-- SECTION HEADER -->
+        <section class="dataset-section">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+            <div class="section-heading">
+                <div>
+                    <span class="section-kicker">DATA COLLECTION</span>
+                    <h2>Available Datasets</h2>
+                    <p>Select a network to explore or download its data.</p>
+                </div>
+
+                <div class="dataset-count">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span>05 Datasets</span>
+                </div>
+            </div>
+
+
+            <!-- DATASET CARDS -->
+            <div class="dataset-grid">
+
+
+                <!-- FACEBOOK -->
+                <article class="dataset-card facebook-card">
+
+                    <div class="card-top">
+                        <div class="dataset-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <span class="dataset-tag">SOCIAL NETWORK</span>
+                    </div>
+
+                    <h3>Facebook Social Graph</h3>
+
+                    <p class="card-description">
+                        An anonymized social network representing connections
+                        between Facebook users.
+                    </p>
+
+                    <div class="graph-stats">
+                        <div class="stat-box">
+                            <span class="stat-label">NODES</span>
+                            <strong>4,039</strong>
+                        </div>
+
+                        <div class="stat-box">
+                            <span class="stat-label">EDGES</span>
+                            <strong>88,234</strong>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="dataset-format">
+                            <i class="fa-regular fa-file-lines"></i>
+                            TXT · GZ
+                        </span>
+
+                        <a class="download-btn"
+                           href="https://snap.stanford.edu/data/facebook_combined.txt.gz"
+                           target="_blank" rel="noopener">
+                            Download <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- EMAIL EU ALL -->
+                <article class="dataset-card email-card">
+
+                    <div class="card-top">
+                        <div class="dataset-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <span class="dataset-tag">EMAIL NETWORK</span>
+                    </div>
+
+                    <h3>Email-EuAll</h3>
+
+                    <p class="card-description">
+                        A large email communication network from a European
+                        research institution, represented as a directed graph.
+                    </p>
+
+                    <div class="graph-stats">
+                        <div class="stat-box">
+                            <span class="stat-label">NODES</span>
+                            <strong>265,214</strong>
+                        </div>
+
+                        <div class="stat-box">
+                            <span class="stat-label">EDGES</span>
+                            <strong>420,045</strong>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="dataset-format">
+                            <i class="fa-regular fa-file-lines"></i>
+                            TXT · GZ
+                        </span>
+
+                        <a class="download-btn"
+                           href="https://snap.stanford.edu/data/email-EuAll.txt.gz"
+                           target="_blank" rel="noopener">
+                            Download <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- GOOGLE -->
+                <article class="dataset-card google-card">
+
+                    <div class="card-top">
+                        <div class="dataset-icon">
+                            <i class="fa-brands fa-google"></i>
+                        </div>
+
+                        <span class="dataset-tag">WEB GRAPH</span>
+                    </div>
+
+                    <h3>Google Web Graph</h3>
+
+                    <p class="card-description">
+                        A web graph in which pages are nodes and hyperlinks
+                        between pages are directed edges.
+                    </p>
+
+                    <div class="graph-stats">
+                        <div class="stat-box">
+                            <span class="stat-label">NODES</span>
+                            <strong>875,713</strong>
+                        </div>
+
+                        <div class="stat-box">
+                            <span class="stat-label">EDGES</span>
+                            <strong>5,105,039</strong>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="dataset-format">
+                            <i class="fa-regular fa-file-lines"></i>
+                            TXT · GZ
+                        </span>
+
+                        <a class="download-btn"
+                           href="https://snap.stanford.edu/data/web-Google.txt.gz"
+                           target="_blank" rel="noopener">
+                            Download <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- STANFORD -->
+                <article class="dataset-card stanford-card">
+
+                    <div class="card-top">
+                        <div class="dataset-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+
+                        <span class="dataset-tag">WEB GRAPH</span>
+                    </div>
+
+                    <h3>Stanford Web Graph</h3>
+
+                    <p class="card-description">
+                        A directed network of web pages from Stanford
+                        University and their hyperlink connections.
+                    </p>
+
+                    <div class="graph-stats">
+                        <div class="stat-box">
+                            <span class="stat-label">NODES</span>
+                            <strong>281,903</strong>
+                        </div>
+
+                        <div class="stat-box">
+                            <span class="stat-label">EDGES</span>
+                            <strong>2,312,497</strong>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="dataset-format">
+                            <i class="fa-regular fa-file-lines"></i>
+                            TXT · GZ
+                        </span>
+
+                        <a class="download-btn"
+                           href="https://snap.stanford.edu/data/web-Stanford.txt.gz"
+                           target="_blank" rel="noopener">
+                            Download <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+
+                </article>
+
+
+                <!-- BERKELEY STANFORD -->
+                <article class="dataset-card berkstan-card">
+
+                    <div class="card-top">
+                        <div class="dataset-icon">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+
+                        <span class="dataset-tag">LARGE WEB GRAPH</span>
+                    </div>
+
+                    <h3>Berkeley–Stanford Graph</h3>
+
+                    <p class="card-description">
+                        A large hyperlink network suitable for testing
+                        PageRank on web-scale graph data.
+                    </p>
+
+                    <div class="graph-stats">
+                        <div class="stat-box">
+                            <span class="stat-label">NODES</span>
+                            <strong>685,230</strong>
+                        </div>
+
+                        <div class="stat-box">
+                            <span class="stat-label">EDGES</span>
+                            <strong>7,600,595</strong>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
+                        <span class="dataset-format">
+                            <i class="fa-regular fa-file-lines"></i>
+                            TXT · GZ
+                        </span>
+
+                        <a class="download-btn"
+                           href="https://snap.stanford.edu/data/web-BerkStan.txt.gz"
+                           target="_blank" rel="noopener">
+                            Download <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- DOWNLOAD INFORMATION -->
+        <section class="download-notice">
+
+            <div class="notice-icon">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <div>
+                <h3>Before you download</h3>
+
+                <p>
+                    These datasets are compressed <strong>.gz</strong> files.
+                    Extract them before processing. Large graphs can require
+                    substantial memory and computation time. Node and edge
+                    counts describe the published datasets; check the source
+                    documentation for details about graph direction and format.
+                </p>
+
+                <a href="https://snap.stanford.edu/data/index.html"
+                   target="_blank" rel="noopener">
+                    Explore all Stanford SNAP datasets
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="dataset-footer">
+            <p>
+                Built for learning and experimenting with
+                <span>PageRank Algorithm.</span>
+            </p>
+            <span class="footer-credit">Dataset sources: Stanford SNAP</span>
+        </footer>
+
+    </main>
 
 </body>
 </html>

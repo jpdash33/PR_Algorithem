@@ -1,46 +1,384 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PR Algorithm in Lab</title>
+
     <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/lab.css">
     <link rel="icon" type="image/png" href="./image/favicon.png">
 
-    <title>Lab</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Syntax highlighting -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 </head>
 
 <body>
 
-   <nav>
+    <!-- Navigation -->
+    <nav class="site-navbar">
         <div class="brand">
-            <div class="brand-icon">
-                <i class="fa-solid fa-diagram-project"></i>
-            </div>
-
-            <div class="brand-name">
-                <strong>PageRank</strong>
-                <span>Algorithm</span>
-            </div>
+            <i class="fa-solid fa-diagram-project"></i>
+            <span>PR Algorithm <span class="brand-highlight">in Lab</span></span>
         </div>
-
 
         <div class="nav-links">
             <a href="Home.html">Home</a>
             <a href="concept.html">Concept</a>
             <a href="lab.html" class="active">Lab</a>
-            <a href="dataset.html">Download</a>
+            <a href="dataset.html">Dataset</a>
             <a href="about.html">About</a>
         </div>
     </nav>
 
+    <main class="lab-container">
 
-    
+        <!-- Hero section -->
+        <section class="lab-hero">
+            <div class="hero-content">
+                <span class="section-tag">
+                    <i class="fa-solid fa-terminal"></i>
+                    PRACTICAL IMPLEMENTATION
+                </span>
 
+                <h1>PageRank <span>Laboratory</span></h1>
 
+                <p>
+                    Explore how PageRank works using Python, NetworkX,
+                    and a real-world Facebook social network dataset.
+                </p>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"></script>
+                <div class="hero-buttons">
+                    <a href="#implementation" class="primary-btn">
+                        <i class="fa-solid fa-code"></i>
+                        Explore Code
+                    </a>
+
+                    <a href="dataset.html" class="secondary-btn">
+                        <i class="fa-solid fa-database"></i>
+                        View Dataset
+                    </a>
+                </div>
+            </div>
+
+            <div class="network-visual">
+                <div class="network-circle circle-one"></div>
+                <div class="network-circle circle-two"></div>
+
+                <div class="network-node node-one">PR</div>
+                <div class="network-node node-two">A</div>
+                <div class="network-node node-three">B</div>
+                <div class="network-node node-four">C</div>
+                <div class="network-node node-five">D</div>
+
+                <div class="network-caption">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    Network Analysis
+                </div>
+            </div>
+        </section>
+
+        <!-- Requirements -->
+        <section class="lab-section">
+            <div class="section-heading">
+                <span class="section-tag">01 / REQUIREMENTS</span>
+                <h2>Prepare Your Environment</h2>
+                <p>Install the required Python libraries before running the program.</p>
+            </div>
+
+            <div class="requirements-grid">
+
+                <article class="lab-card">
+                    <div class="card-icon purple-icon">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p>Python 3 installed on your computer.</p>
+                </article>
+
+                <article class="lab-card">
+                    <div class="card-icon cyan-icon">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+                    <h3>NetworkX</h3>
+                    <p>Creates graphs and calculates PageRank scores.</p>
+                </article>
+
+                <article class="lab-card">
+                    <div class="card-icon orange-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3>Matplotlib</h3>
+                    <p>Visualizes the selected network nodes.</p>
+                </article>
+
+            </div>
+
+            <div class="terminal-box">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span>Terminal</span>
+                    <button class="copy-btn" data-copy="pip install networkx matplotlib">
+                        <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                </div>
+
+                <pre><code class="language-bash">pip install networkx matplotlib</code></pre>
+            </div>
+        </section>
+
+        <!-- Dataset notice -->
+        <section class="dataset-notice">
+            <div class="notice-icon">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <div>
+                <h3>Dataset Required</h3>
+                <p>
+                    This program expects a file named
+                    <code>facebook_combined.txt.gz</code>.
+                    Place it in the same directory as your Python script.
+                </p>
+                <a href="dataset.html">Learn about the dataset
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Code implementation -->
+        <section class="lab-section" id="implementation">
+            <div class="section-heading">
+                <span class="section-tag">02 / IMPLEMENTATION</span>
+                <h2>Python Source Code</h2>
+                <p>Calculate PageRank scores and visualize the top 30 nodes.</p>
+            </div>
+
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-file">
+                        <i class="fa-brands fa-python"></i>
+                        <span>facebook_PRA.py</span>
+                    </div>
+
+                    <button class="copy-btn" data-copy-target="pagerank-code">
+                        <i class="fa-regular fa-copy"></i> Copy Code
+                    </button>
+                </div>
+
+                <pre><code id="pagerank-code" class="language-python">import matplotlib.pyplot as plt
+import networkx as nx
+
+# Load the Facebook social network dataset
+G = nx.read_edgelist(
+    "facebook_combined.txt.gz",
+    nodetype=int
+)
+
+# Calculate PageRank scores
+fb = dict(nx.pagerank(G))
+
+print("\n|| Page-Rank Of each Node in Facebook ||")
+print("========================================")
+
+for node, rank in fb.items():
+    print(f"Node({node})-> {rank}")
+
+print("========================================\n")
+
+# Find the node with the highest PageRank
+max_node, max_pr = max(
+    fb.items(),
+    key=lambda x: x[1]
+)
+
+print("Maximum PageRank Value and its node:")
+print(f"Node({max_node}): {max_pr}")
+print("========================================\n")
+
+# Select the top 30 nodes
+top_nodes = sorted(
+    fb,
+    key=fb.get,
+    reverse=True
+)[:30]
+
+# Create a subgraph containing the selected nodes
+H = G.subgraph(top_nodes)
+
+# Calculate positions for visualization
+pos = nx.spring_layout(
+    H,
+    seed=42,
+    iterations=50,
+    k=5
+)
+
+# Draw the graph
+nx.draw_networkx(
+    H,
+    pos=pos,
+    node_size=1200,
+    node_color="green",
+    font_color="white",
+    font_size=10,
+    edge_color="red",
+    font_weight="bold",
+    with_labels=True,
+    width=2
+)
+
+plt.title("TOP 30 FACEBOOK NODES BY PAGERANK")
+
+plt.figtext(
+    0.5,
+    0.02,
+    f"Node({max_node}): {max_pr} [Maximum PageRank Value]",
+    ha="center",
+    fontsize=12,
+    fontweight="bold",
+    color="blue"
+)
+
+plt.show()</code></pre>
+            </div>
+
+            <div class="run-instructions">
+                <h3><i class="fa-solid fa-play"></i> Run the program</h3>
+
+                <p>Save the Python code as <code>facebook_PRA.py</code> and run:</p>
+
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <span>Terminal</span>
+                        <button class="copy-btn" data-copy="python facebook_PRA.py">
+                            <i class="fa-regular fa-copy"></i> Copy
+                        </button>
+                    </div>
+
+                    <pre><code class="language-bash">python facebook_PRA.py</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Explanation -->
+        <section class="lab-section">
+            <div class="section-heading">
+                <span class="section-tag">03 / EXPLANATION</span>
+                <h2>How the Program Works</h2>
+            </div>
+
+            <div class="steps-list">
+
+                <article class="step-card">
+                    <span class="step-number">01</span>
+                    <div>
+                        <h3>Import libraries</h3>
+                        <p>
+                            NetworkX handles graph operations and PageRank calculations.
+                            Matplotlib displays the graph.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-number">02</span>
+                    <div>
+                        <h3>Load the dataset</h3>
+                        <p>
+                            <code>nx.read_edgelist()</code> reads connections between
+                            Facebook nodes from the dataset file.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-number">03</span>
+                    <div>
+                        <h3>Calculate PageRank</h3>
+                        <p>
+                            <code>nx.pagerank(G)</code> calculates a score for each
+                            node based on the graph's link structure.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-number">04</span>
+                    <div>
+                        <h3>Find the highest score</h3>
+                        <p>
+                            The <code>max()</code> function identifies the node
+                            with the largest PageRank score.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-number">05</span>
+                    <div>
+                        <h3>Visualize the top 30 nodes</h3>
+                        <p>
+                            The program selects the 30 highest-ranked nodes and
+                            draws the subgraph containing those nodes.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="info-card">
+                <i class="fa-solid fa-lightbulb"></i>
+                <p>
+                    <strong>Important:</strong> The graph displays edges that
+                    already exist between the selected top 30 nodes. It does
+                    not automatically create connections between every selected node.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="lab-footer">
+        <p>
+            <i class="fa-solid fa-diagram-project"></i>
+            PR Algorithm in Lab
+        </p>
+        <span>Understanding PageRank through practical implementation.</span>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+        hljs.highlightAll();
+
+        document.querySelectorAll("[data-copy]").forEach(button => {
+            button.addEventListener("click", async () => {
+                await navigator.clipboard.writeText(button.dataset.copy);
+                button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            });
+        });
+
+        document.querySelectorAll("[data-copy-target]").forEach(button => {
+            button.addEventListener("click", async () => {
+                const code = document.getElementById(
+                    button.dataset.copyTarget
+                ).textContent;
+
+                await navigator.clipboard.writeText(code);
+                button.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            });
+        });
+    </script>
 
 </body>
-
 </html>
